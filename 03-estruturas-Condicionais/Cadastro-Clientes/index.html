@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro De Clientes</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Cadastro de Clientes</h1>
+    <form class="formulario" name="formulario" action="">
+        <input name="nome" type="text" placeholder="Nome Completo">
+        <input id="email" name="email" type="email" placeholder="Email">
+        <input id="idade" name="idade" type="number" placeholder="Idade">
+
+        <p>Pessoa Física ou Jurídica</p>
+        <input name="tipo" type="radio" value="fisica"> Fisica <!--mesmo name Sobrescreve ou um ou Outro -->
+        <input name="tipo" type="radio" value="juridica"> Juridica
+        <button type="button" onclick="salvar()">Salvar</button> <!-- type="submit é padrao" -->
+    </form>
+</body>
+</html>

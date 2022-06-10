@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final-Space</title>
+</head>
+<body onload="buscarPersonagens()">
+    <!-- <button onclick="buscarPersonagens()">Buscar Personagens</button> -->
+    <div id="lista"></div>
+</body>
+<script>
+    let listaFinalSpace = [];
+    function buscarPersonagens(){     
+        //Se tem retonro de Promise(2casos accept,reject) 
+        //Requisicao Resquest(infos da requisicao,pedido) e Response(infos da resposta)
+        fetch("https://finalspaceapi.com/api/v0/character/")
+        .then((resposta) => {
+           return resposta.json()//Promise
+        })
+        .then((listPersonagens) => { //Resolve a Promise com Then, e imprime a lista
+          listaFinalSpace = listPersonagens;
+          document.getElementById("lista").innerText = listaFinalSpace;
+          console.log(listPersonagens);
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+</script>
+</html>

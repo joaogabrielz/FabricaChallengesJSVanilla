@@ -1,0 +1,66 @@
+body{
+    font-family: sans-serif;
+    background-color: aliceblue;
+}
+.card{
+    background-color: rgba(4, 66, 66, 0.944);
+    border-radius: 5px;
+    color: white;
+    width: 70%;
+    text-align: center;
+    margin: 50px auto;
+    padding: 15px;
+    box-shadow: 2px 2px 4px gray;
+}
+.card h1, h2{
+    color: white;
+}
+.card h2{
+    font-weight: 300;
+}
+.card input{
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 15px 0px;
+    outline: none;
+}
+.card button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 0px 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(24, 49, 49);
+    background-color: aliceblue;
+}
+.card button:hover{
+    background-color: rgb(92, 104, 116);
+    color: rgb(235, 224, 224);
+    cursor: pointer;
+}
+.card table{
+    width: 100%;   
+    border-collapse:collapse ;
+}
+.card img{
+    width: 24px;
+    cursor: pointer;
+}
+.card img:hover{
+    background-color: rgba(206, 202, 202, 0.556);
+}
+td, th{
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.223);
+    font-weight: 300;
+}
+fieldset{
+    border: 1px solid rgba(255, 255, 255, 0.215);
+    border-radius: 5px;
+}
+fieldset legend{
+    text-align: left;
+}

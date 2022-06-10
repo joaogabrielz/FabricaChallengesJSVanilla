@@ -1,0 +1,22 @@
+<html>
+    <script>
+        function divisao(n1, n2, sucesso, erro){
+
+            if(n2 != 0){
+                let resultado = n1 / n2;
+                sucesso(resultado)
+            }
+            else{
+                erro("Divisao por 0")
+            }
+        }
+        function sucesso(msg){
+            console.log("Resultado da Divisao é: "+ msg)
+        }
+        function erro(msg){
+            console.log(msg);
+        }
+        //divisao(10, 0, sucesso, erro);
+        divisao(10, 2, sucesso, erro);
+    </script>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porcentagem</title>
+    <meta charset="utf-8">
+    <style>
+        body{
+            background-color: whitesmoke;
+            font-family: sans-serif;
+        }
+         h1{
+            margin:50px auto;
+            text-align: center;  
+            color: gray;    
+            font-size: 40px;  
+        }      
+        div{
+            display: block;
+            text-align: center;
+            margin: auto;
+            margin-top:200px ;  
+        }
+        input{
+            display: inline-block;
+            margin: auto;
+            margin-top: 10px;
+            padding: 10px;
+            margin: 10px;
+            width: 25%;
+            border-radius: 5px;
+            border: 1px solid gray;         
+        }
+        button{   
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+            background-color:steelblue;
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover{
+            background-color:rgb(30, 95, 148);
+        }
+        span{
+            display: block;
+            margin-top: 10px;
+            font-weight: 400;        
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Quantos por cento?</h1>
+        <input placeholder="numero1" type="number" name="" id="n1">
+        <input placeholder="numero2" type="number" name="" id="n2">
+        <button onclick="calc()">Calcular</button>
+        <span>Resultado:</span><span id="resp"></span>
+    </div>
+
+    <script>  
+        function calc(){
+        //Pegar valores em String dos elementos HTML
+        let n1String = document.getElementById("n1").value;
+        let n2String = document.getElementById("n2").value;
+
+        //Transformar valores em numero
+        let n1Number = Number(n1String);//Como parseInt e float mas js identifica automaticamente
+        let n2Number = Number(n2String);
+            
+        //Armazenando Resultado
+        let result = n1Number * 100 / n2Number;
+
+        //alert(n1Number + " é " + result + "% de " + n2Number); //Exibindo em um alert
+
+        //Exibindo Resultado dentro da tag Html
+        document.getElementById("resp").innerHTML = n1Number + " é " + result + "% de " + n2Number;
+        }
+    </script>
+</body>
+</html>

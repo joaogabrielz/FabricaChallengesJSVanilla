@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Vendas</h1>
+
+    <form class="formulario">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <input disabled name="nome" type="text" placeholder="Nome Completo">
+            <input disabled name="email" type="email" placeholder="Email">
+            <input disabled name="cpf" type="number" placeholder="CPF">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Faça Sua Compra</legend>
+            <select name="fruta" id="fruta">
+            <option value="" selected>Selecione uma Fruta</option>
+                <option value="banana">Banana</option> 
+                <option value="goiaba">Goiaba</option> 
+                <option value="maca">Maçã</option> 
+                <option value="melao">Melão</option>        
+            </select>
+                <hr>
+                <button type="button" onclick="adicionar()">Adicionar</button>
+                <hr>
+                <button id="final" type="button" onclick="finalizar()">Finalizar</button>
+        </fieldset>
+       
+    </form>   
+</body>
+</html>

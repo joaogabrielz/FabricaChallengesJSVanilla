@@ -1,0 +1,52 @@
+body{
+font-family: sans-serif;
+background-color: whitesmoke;
+}
+.card{
+    width: 45%;
+    margin: 50px auto;
+    background-color: rgb(231, 231, 231);
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+.card h1{
+    font-weight: 600;
+    color: cornflowerblue;
+}
+.card div{
+    margin: 20px 0px;
+}
+.card input{
+    width: 70%; 
+    padding: 10px;
+    border: none;
+    background-color: rgb(231, 231, 231);
+    border-bottom:1px solid gray ;
+}
+.card button{
+    padding: 10px;
+    border: none;
+    border-bottom:1px solid rgba(128, 128, 128, 0.452) ;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    color: rgb(37, 37, 37);
+    cursor: pointer;
+}
+.card button:hover{
+background-color: rgb(80, 128, 218);
+}
+.area-remover legend{
+    text-align: left;
+}
+.area-remover{
+    border: 1px solid rgba(128, 128, 128, 0.473);
+}
+#limpa{
+    background-color: rgb(224, 69, 69);
+    color: white;
+}
+#limpa:hover{
+    background-color: rgb(207, 52, 52);
+    color: white;
+}

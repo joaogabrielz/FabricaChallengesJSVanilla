@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final-Space</title>
+</head>
+<body onload="buscarPersonagens()">
+    <!-- <button onclick="buscarPersonagens()">Buscar Personagens</button> -->
+    <ul id="lista"></ul>
+</body>
+<script>
+    let listaFinalSpace = [];
+    async function buscarPersonagens(){     
+       let resultado = await fetch("https://finalspaceapi.com/api/v0/character/");
+       let listaFinalSpace = await resultado.json(); //Esperar Resolver -> await(como o then)
+
+       let stringBuffer = "";
+
+       for(let i=0; i < listaFinalSpace.length; i++){
+         stringBuffer += `<li>(${listaFinalSpace[i].id}) ${listaFinalSpace[i].name} , ${listaFinalSpace[i].gender}</li>`; 
+        }
+       let lista = document.getElementById("lista").innerHTML = stringBuffer;
+    }
+</script>
+</html>

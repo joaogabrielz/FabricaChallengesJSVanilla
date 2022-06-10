@@ -1,0 +1,159 @@
+# Funcoes, Array Methods e Arrow Functions:
+
+## Funcao Padrao:
+
+function name_function(){
+  code...
+  alert("ola");
+}
+
+## Funcao anonima:
+
+(function(){
+  code...
+  alert("ola");
+})
+ - Nao tem como chamar pelo nome
+ - Entao Executar apos a declaracao com ()
+ - Funcao de Execucao imediata
+
+### Funcao no JS é Considerada "Cidadão de Primeira Classe".
+Funcao no JS é considerada um Valor de uma Variavel.
+pode armazenar uma funcao dentro de uma variavel ou atributo de objeto.
+
+function adicionar(a , b){
+   alert(a + b);
+}
+adicionar(1,2);
+
+let somar = adicionar; //"variavel soma recebe REFERENCIA da propria funcao Adicionar"
+somar(1, 3);
+
+
+### Assim como pode Atibuir funcao a uma variavel, Tambem pode-se fazer com um objeto
+
+let carro = {
+	cor:"vermelho",
+	marca:"fiat",
+	modelo:"palio",
+	ano:2008,
+	ligar:function(){
+	 alert("Carro ligado");
+	},
+	desligar:function(){
+	 alert("Carro desligado");
+	}
+ }
+
+carro; //objeto
+carro.ano; //2008
+carro.modelo; //'palio'
+carro.ligar(); // alert("Carro ligado")
+
+
+### Pode utilizar Funcoes como Paramestros de outras Funcoes
+
+function executaFuncao(funcao){
+    funcao();
+}
+function fazAlgo(){
+    alert("Fazendo algo..");
+}
+executaFuncao(fazAlgo); //alert(Fazendo algo...)
+
+ - NAO Esta executando() a Funcao Esta Passando a REFERENCIA.
+ - O papel de executar a Funcao faz algo é de "executaFuncao"
+
+
+## Arrow Functions:
+
+ - "Versao Resumida de Funcao Anonima"
+     function(){alert("OLa sou funcao anonima")}
+
+ - Arrow Funcion:
+    () => {alert("Ola sou uma Arrow Function")}
+
+ - Exemplos:
+      let somar = (a, b) => {alert(a + b)}
+      somar(2, 2);
+
+let carro = {
+	cor:"vermelho",
+	marca:"fiat",
+	modelo:"palio",
+	ano:2008,
+	ligar:() => {
+	 alert("Carro ligado");
+	},
+	desligar:() => {
+	 alert("Carro desligado");
+	}
+ }
+
+carro.ligar(); //alert("Carro ligado")
+carro.desligar(); //alert("Carro desligado")
+
+- Arroz Function muito utilizada em cenario em que precisa passar parametro da funcao
+como Parametro de outra Funcao
+
+function executaFuncao(funcao){
+	funcao();
+}
+executaFuncao(function () = { alert("fazendo algo")}); //Normal
+
+executaFuncao(() => {alert("fazendo algo")}); //Arroz Function
+//Resume o Codigo a Sintaxe...
+
+
+## Filter
+
+ - Todo vetor possui 
+ - Esta funcao executa uma filtragem
+ - filtra de acordo com algum criterio criado com alguma Funcao..
+ - Nao altera vetor Original, entao tem q atribuir a variavel
+
+nomes = ["joao silva", "pedro", "rafael silva"];
+nomes.filter((elemento) => {return elemento == "joao silva"}) //['joao silva']
+nomes.filter((elemento) => {return elemento.includes("silva")}) //(2)['joao silva','rafael silva']
+
+## Find
+
+ - Funcao de Vetores tbm
+ - Retorna 1 elemento, o primeiro encontrado de acordo com o criteiro de busca
+
+nomes = ["joao silva", "pedro", "rafael silva"];
+nomes.find((elemento) => {
+	return elemento == "joao silva"
+}) //'joao silva'
+
+## Sort
+
+ - Ordenar o Vetor
+ - Padrao Ordenacao Encode
+
+nomes = ["joao silva", "pedro", "rafael silva"];
+nomes.sort();
+
+ - A partir da conversao dos elementos pra string(Entao se for de Numeros
+nao tera resultado esperado..Converte cada elemento para Encode de Caracteres,
+neste o 10 vem primeiro q o 2)
+
+let numeros = [2,3,10,1,9];
+
+numeros.sort(); //[1,10,2,3,9]
+
+numeros.sort( (a,b) => {
+	if(a >b){
+	 return 1;	
+	}
+	else if(b > a){
+	 return -1;
+	}
+	else{
+	 return 0;
+	}
+})
+
+
+
+
