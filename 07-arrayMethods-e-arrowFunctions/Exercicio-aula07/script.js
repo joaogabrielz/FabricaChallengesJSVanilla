@@ -1,5 +1,7 @@
-lista = [];
-buscarActive = false;
+let lista = [];
+let buscarActive = false;
+let listaBkp
+let clearFilter = true;
 
 function adicionarTarefas(){
    let tarefas = document.getElementById("tarefas").value;
@@ -7,9 +9,14 @@ function adicionarTarefas(){
        alert("Porfavor Preencha o campo de Tarefas")
    }
    else{
-    lista.push(tarefas);
-    mostrarTarefas();
-    limparImput()
+        if(clearFilter){
+            lista.push(tarefas);
+            mostrarTarefas();
+            limparImput()   
+        }
+        else{
+            alert("Limpe o filtro antes de Adicionar novamente")
+        }
    }  
 }
 function limparImput(){
@@ -37,15 +44,23 @@ function excluirTarefa(index){
 function buscar(){
     buscarActive = true;
     let busca = document.getElementById("tarefas").value;
-    listaBkp = lista;
-    lista = lista.filter((element) => {
-        return element.toLowerCase().includes(busca.toLowerCase());
-    });
-    document.getElementById("lista").innerHTML = "";
-    mostrarTarefas();
+
+    if(clearFilter){
+        listaBkp = lista;
+        lista = lista.filter((element) => {
+            return element.toLowerCase().includes(busca.toLowerCase());
+        });
+        document.getElementById("lista").innerHTML = "";
+        mostrarTarefas();
+        clearFilter = false;
+    }
+    else{
+        alert("Limpe o filtro antes de Buscar novamente")
+    } 
 }
 function limparFiltro(){
     buscarActive = false;
+    clearFilter = true;
     lista = listaBkp;
     document.getElementById("lista").innerHTML = "";
     mostrarTarefas();
